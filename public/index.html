@@ -8,18 +8,26 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" href="./css/styles.css">
         <script src="./js/bundle.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-        <div id="#app">
+        <div id="app">
             <h1>ToDo's</h1>
-            <form action="">
-                    <div>
-                        <input type="text">
-                    </div>
-                    <button v-on:click="addNewToDo">Add new ToDo</button>
-            </form>
-        </div>
+            <input type="text" v-model="newToDo">
+            <button v-on:click="addNewToDo">Add new ToDo</button>
+            <ul>
+                <li v-for="(toDo, index) in toDos"
+                    v-bind:class="{'checked': toDo.checked, 'notChecked': !toDo.checked}">
+                    <span>{{ toDo.name }}</span>
+                    <span v-if="toDo.checked">Checked!</span>
+                    <button v-if="!toDo.checked"
+                            v-on:click="checkToDo(index)">
+                        Check
+                    </button>
 
+                </li>
+            </ul>
+        </div>
     </body>
 
 

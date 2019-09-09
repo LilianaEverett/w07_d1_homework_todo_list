@@ -4,21 +4,24 @@ document.addEventListener('DOMContentLoaded', () => {
     new Vue({
         el: "#app",
         data: {
-            todos: [
+            toDos: [
                 {name:"Buy shopping", checked: false},
                 {name:"Clean bathroom", checked: true},
                 {name:"Car's MOT", checked: false}
             ],
-            newItem:""
+            newToDo: ""
         },
         methods: {
             addNewToDo: function () {
-                this.todos.push({
-                    name: this.newItem,
+                this.toDos.push({
+                    name: this.newToDo,
                     checked: false
                 });
-                this.newItem = "";
+                this.newToDo = "";
+            },
+            checkToDo: function (index) {
+                this.toDos[index].checked = true;
             }
         }
-    )};
-)};
+    });
+});

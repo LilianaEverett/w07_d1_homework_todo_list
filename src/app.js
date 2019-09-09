@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
         el: "#app",
         data: {
             toDos: [
-                {name:"Buy shopping", checked: false},
-                {name:"Clean bathroom", checked: true},
-                {name:"Car's MOT", checked: false}
+                {name:"Buy shopping", checked: false, highPriority: true},
+                {name:"Clean bathroom", checked: true, highPriority: true},
+                {name:"Car's MOT", checked: false, highPriority: false}
             ],
             newToDo: ""
         },
@@ -15,12 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
             addNewToDo: function () {
                 this.toDos.push({
                     name: this.newToDo,
-                    checked: false
+                    checked: false,
+                    highPriority: this.newToDo
                 });
                 this.newToDo = "";
             },
             checkToDo: function (index) {
                 this.toDos[index].checked = true;
+            },
+            checkPriority: function (index) {
+                this.toDos[index].highPriority = true;
             }
         }
     });

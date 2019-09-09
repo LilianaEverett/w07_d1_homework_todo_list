@@ -43,10 +43,12 @@ li.checked {
     background-color: #9CE3A1;
 }
 
-li.notChecked {
+li.notChecked{
     border: 2px solid #B90606;
     background-color: #E39C9C;
 }
+
+
 
 input[type="text"] {
     padding: 10px;
@@ -60,4 +62,8 @@ button{
     color: #fff;
     cursor: pointer;
     border: 3px solid #000;
+}
+
+#high {
+
 }

@@ -11,23 +11,26 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-        <div id="app">
-            <h1>ToDo's</h1>
-            <input type="text" v-model="newToDo">
-            <button v-on:click="addNewToDo">Add new ToDo</button>
-            <ul>
-                <li v-for="(toDo, index) in toDos"
-                    v-bind:class="{'checked': toDo.checked, 'notChecked': !toDo.checked}">
-                    <span>{{ toDo.name }}</span>
-                    <span v-if="toDo.checked">Checked!</span>
-                    <button v-if="!toDo.checked"
-                            v-on:click="checkToDo(index)">
-                        Check
-                    </button>
+        <div class="background">
+            <div id="app">
+                <h1>ToDo List</h1>
+                <input type="text" v-model="newToDo">
+                <button v-on:click="addNewToDo">Add new ToDo</button>
+                <ul>
+                    <li v-for="(toDo, index) in toDos"
+                        v-bind:class="{'checked': toDo.checked, 'notChecked': !toDo.checked}">
+                        <span>{{ toDo.name }}</span>
+                        <span v-if="toDo.checked"></span>
+                        <button v-if="!toDo.checked"
+                                v-on:click="checkToDo(index)">
+                            DONE
+                        </button>
 
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
+
     </body>
 
 

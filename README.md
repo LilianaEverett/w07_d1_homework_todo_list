@@ -34,4 +34,3 @@ todos: [
 - Add radio buttons to track the level of priority
 - Give the user visual feedback on what todos are high priority
 
-

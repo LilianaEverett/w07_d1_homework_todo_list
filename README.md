@@ -26,3 +26,17 @@ Use Vue and Webpack to build a solution that looks like this:
 - Update the todos array to take in objects with keys of name and priority.
 - Add radio buttons to track the level of priority
 - Give the user visual feedback on what todos are high priority
+
+## To view the application running:
+
+download or clone the repository.
+
+In the terminal: cd into the repository folder 
+
+`npm install`
+
+`npm run build`
+
+`cd public`
+
+`open index.html`

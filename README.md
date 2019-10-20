@@ -33,7 +33,9 @@ download or clone the repository.
 
 In the terminal: cd into the repository folder 
 
-`npm install`
+`npm init -y`
+
+`npm i -D webpack webpack-cli`
 
 `npm run build`
 

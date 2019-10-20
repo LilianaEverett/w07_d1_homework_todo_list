@@ -8,27 +8,26 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" href="./css/styles.css">
         <script src="./js/bundle.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
         <div class="background">
             <div id="app">
                 <form action="">
                     <h1>ToDo List</h1>
-                    <input type="text" v-model="newToDo">
+                    <input type="text" v-model="newToDo.name">
                     <button v-on:click="addNewToDo">Add new ToDo</button>
                     <h4>Priority:</h4>
-                    <input type="radio" id="high" name="priority" value="high" v-model="newToDo">
+                    <input type="radio" id="high" name="priority" value="high" v-model="newToDo.priority">
                     <label for="high">High</label>
-                    <input type="radio" id="low" name="priority" value="low" v-model="newToDo">
+                    <input type="radio" id="low" name="priority" value="low" v-model="newToDo.priority">
                     <label for="low">Low</label>
                 </form>
                 <ul>
                     <li v-for="(toDo, index) in toDos"
                         v-bind:class="{'checked': toDo.checked, 'notChecked': !toDo.checked}">
-                        <span>{{ toDo.name }}</span>
-                        <span v-if="checkPriority(index)">HIGH PRIORITY</span>
-                        <!-- <span v-else>LOW PRIORITY</span> -->
+                        <span>{{ toDo.name + " " + " " + toDo.priority}}</span>
+                        <!-- <span v-if="toDo.priority">HIGH PRIORITY</span>
+                        <span v-else>LOW PRIORITY</span> -->
                         <span v-if="toDo.checked"></span>
                         <button v-if="!toDo.checked"
                                 v-on:click="checkToDo(index)">
@@ -39,8 +38,5 @@
                 </ul>
             </div>
         </div>
-
     </body>
-
-
 </html>
